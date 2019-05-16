@@ -52,3 +52,7 @@ def upload_file():
     return jsonify({
         'inserted_count': result.inserted_count
     })
+
+if __name__ == '__main__':
+    debug = os.environ.get('DEBUG', True) == 'True'
+    app.run(debug=debug,host=os.environ.get('HOST', '0.0.0.0'))
